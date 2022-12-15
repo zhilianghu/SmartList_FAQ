@@ -1,0 +1,2105 @@
+
+<html>
+<head>
+<title>SmartList FAQ (Frequently Asked Questions)</title>
+ <META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+ <META NAME="AUTHOR" CONTENT="Zhiliang Hu">
+ <META NAME="description" CONTENT="SmartList FAQ (Frequently Asked Questions)">
+ <META NAME="keywords" CONTENT="SmartList,Frequently Asked Questions,FAQ">
+ <style>
+  BODY,TD,P { font-family:monospace; }
+ </style>
+</head>
+
+<body text="#000000" bgcolor="#FFFFFF" link="#0000FF" alink="#FF0000" vlink="#3300FF">
+<center>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="left" valign="bottom">
+<a href="index.php">
+<img border=0 src="logo.jpg" alt="SmartList Mailing List Management Software"></a>
+</td><td align="left">
+<h1>SmartList FAQ (Frequently Asked Questions)</h1>
+Last Updated: May 26, 2021
+<p>
+Revision: 1.55 
+</td></tr></table>
+<hr>
+<h2>Table of Contents</h2>
+</center>
+<h3>1: General</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;1.1: <a href="#Section_1.1">Introduction:</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.2: <a href="#Section_1.2">History of this document:</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.3: <a href="#Section_1.3">What is SmartList?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.4: <a href="#Section_1.4">Is there more documentation available?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.5: <a href="#Section_1.5">How does SmartList work?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.6: <a href="#Section_1.6">Where can I get SmartList?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.7: <a href="#Section_1.7">Is there a SmartList Support mailing list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.8: <a href="#Section_1.8">Is there an archive of the mailing list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.9: <a href="#Section_1.9">What's the purpose of the rc.local.* files?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.10: <a href="#Section_1.10">How can I see what's going on (diagnostics)?</a><br>
+<h3>2: Basic List Administration</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;2.1: <a href="#Section_2.1">What does "uncomment" mean?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.2: <a href="#Section_2.2">How do I make the list Open/Closed?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.3: <a href="#Section_2.3">How can I disable automatic unsubscription?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.4: <a href="#Section_2.4">How can I prevent certain people from automatic unsubscription?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.5: <a href="#Section_2.5">How do people subscribe/unsubscribe to the list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.6: <a href="#Section_2.6">How do I change the admin password for my list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.7: <a href="#Section_2.7">How do I enable 'auto help'?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.8: <a href="#Section_2.8">How can I tell SmartList to notify me when someone subscribes/unsubscribes?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.9: <a href="#Section_2.9">How can I automatically subscribe people who post to the list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.10: <a href="#Section_2.10">How can I add a short message file to the top or the bottom of all the mailing list messages?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.11: <a href="#Section_2.11">How can I keep the automatically added messages from multiplying when people quote them all the time?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.12: <a href="#Section_2.12">How can I automatically send files to new subscribers?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.13: <a href="#Section_2.13">Can I add comments to the addresses in the dist file?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.14: <a href="#Section_2.14">How does someone access the archive server?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.15: <a href="#Section_2.15">What does "delink" mean?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.16: <a href="#Section_2.16">How do I add another list of accept addresses?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.17: <a href="#Section_2.17">Hello, Is there a list of x-commands somewhere?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.18: <a href="#Section_2.18">How to track bounces from addresses not on list?</a><br>
+<h3>3: Remote Administration</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;3.1: <a href="#Section_3.1">How do I use X-Command for remote administration?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.2: <a href="#Section_3.2">Can I issue X-Commands from the message body?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.3: <a href="#Section_3.3">How do I subscribe/unsubscribe people to my list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.4: <a href="#Section_3.4">How do I get a list of the subscribers?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.5: <a href="#Section_3.5">How can I prevent the accidental multiple subscription of an address with x_command?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.6: <a href="#Section_3.6">Is there a web interface for administering SmartList?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.7: <a href="#Section_3.7">Why isn't SmartList adding/removing names even though it says it is?</a><br>
+<h3>4: Restrictions and Security</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;4.1: <a href="#Section_4.1">How can I restrict who can subscribe to my list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.2: <a href="#Section_4.2">How can I restrict who can post to my list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.3: <a href="#Section_4.3">How can I prevent that someone (un)subscribes someone else without their knowledge?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.4: <a href="#Section_4.4">Is there a possibility to authenticate postings with SmartList?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.5: <a href="#Section_4.5">How can I restrict who can access the archive server?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.6: <a href="#Section_4.6">Can SmartList confirm (un)subscriptions?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.7: <a href="#Section_4.7">How can I allow posts only from a certain domain, without using the accept file?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.8: <a href="#Section_4.8">How to bounce messages with a certain word in the subject?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.9: <a href="#Section_4.9">How to automatically notify posters of messages bounced for being too large?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.10: <a href="#Section_4.10">How do I allow digest recipients to post to the regular list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.11: <a href="#Section_4.11">How to restrict postings from a particular sender?</a><br>
+<h3>5: Digests</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;5.1: <a href="#Section_5.1">How do I turn a non-digest list into a digest?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.2: <a href="#Section_5.2">How often do digests get sent out?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.3: <a href="#Section_5.3">Can I force a digest to be sent every day, even if it is small?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.4: <a href="#Section_5.4">How can I add a message to the beginning of every digest?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.5: <a href="#Section_5.5">Is there a way to make the digest go out without being an attachment?</a><br>
+<h3>6: Interaction of SmartList with Message Transfer Agents (MTAs)</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;6.1: <a href="#Section_6.1">Does SmartList run with Postfix?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;6.2: <a href="#Section_6.2">Does SmartList run with qmail?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;6.3: <a href="#Section_6.3">Sendmail can't run flist. Why? (smrsh)</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;6.4: <a href="#Section_6.4">How do I get SmartList to work with different virtual accounts?</a><br>
+<h3>7: Addons and enhancements for SmartList</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;7.1: <a href="#Section_7.1">Is it possible to have more than one list maintainer?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.2: <a href="#Section_7.2">Can I remotely update files used by SmartList like help.txt?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.3: <a href="#Section_7.3">How can a subscriber temporarily suspend subscription?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.4: <a href="#Section_7.4">Where can I find more SmartList information and utilities?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;7.5: <a href="#Section_7.5">Can SmartList send individualized messages to each list recipient?</a><br>
+<h3>8: Miscellaneous</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;8.1: <a href="#Section_8.1">How can I make my list moderated?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.2: <a href="#Section_8.2">How can I change the messages that SmartList sends to people?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.3: <a href="#Section_8.3">How can I add "[listname]" to all of the mailing list messages for easy filtering?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.4: <a href="#Section_8.4">How can I add a custom header to all of the mailing list messages?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.5: <a href="#Section_8.5">How can I remove some headers from all of the mailing list messages?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.6: <a href="#Section_8.6">Is there an easy way to remove duplicates from the dist file?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.7: <a href="#Section_8.7">How can I keep people from sending HTML/attachments/other junk to the list?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.8: <a href="#Section_8.8">How do I make replies go to the list instead of to the sender?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.9: <a href="#Section_8.9">How can I make replies go to the original sender?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.10: <a href="#Section_8.10">Why doesn't putting "Reply-To: $listaddr" in my rc.custom file work for all subscribers?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.11: <a href="#Section_8.11">How can I include the number of subscribers in the footer I'm attaching to each list mail?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.12: <a href="#Section_8.12">How to send an auto-reply back when someone posts?</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;8.13: <a href="#Section_8.13">Why are MIME and HTML emails a problem for SmartList?</a><br>
+
+<center>
+<hr>
+<h2>SmartList FAQ (Frequently Asked Questions)</h2>
+</center>
+<hr><h3>1: General</h3>
+<hr>
+<a name="Section_1.1">
+<h4>1.1: Introduction:</h4>
+<blockquote>
+<p>
+Welcome to the SmartList FAQ.
+<p>
+You are strongly advised to read the official <a href="Manual.html">SmartList Manual</a>
+in advance.
+Many questions in this FAQ are only pointing to the appropriate chapter in
+the Manual.
+<p>
+This document is a collection of helpful hints and tips for getting
+the most out of SmartList.  The sources for this information are numerous.
+<p>
+If you have a comment or suggestion regarding this FAQ, please forward it
+to the Smartlist User's mailing list (for the list info, see
+http://mailman.rwth-aachen.de/mailman/listinfo/smartlist).
+<p>
+<b>
+Disclaimer: All information in this FAQ is provided AS IS and without
+any warranty of any kind.  No person involved in this document assumes
+any liability for damages that occur as a result of using this
+information.  USE THIS INFORMATION ONLY AT YOUR OWN RISK.
+</b>
+<p>
+It is suggested that you create a test list, and try changes on that test
+list before you place them into production.
+
+</blockquote>
+<hr>
+<a name="Section_1.2">
+<h4>1.2: History of this document:</h4>
+<blockquote>
+<p>
+This document was originally written by jason@mindwell.com, then picked up and
+modified/enhanced by Werner Reisberger (werner@pure.ch), later
+<!--
+This version of this document may yet be available at
+<a href="ftp://www.pure.ch/pub/smartlist/SmartList-FAQ.html">
+ftp://www.pure.ch/pub/smartlist/SmartList-FAQ.html
+</a>.
+-->
+was updated/ maintained by Peter Hartzler (pete@hartzler.net).  Currently this
+FAQ is located at <a href="https://www.animalgenome.org/SmartList/">
+https://www.animalgenome.org/SmartList/</a>, maintained by Zhiliang Hu since 6 Oct 2005.
+<p>
+The photo of the Catalina Macaw in the document logo is by Judy Leach (
+<a href="http://www.petparrot.com/">http://www.petparrot.com/</a>)
+and is used with her permission.
+
+</blockquote>
+<hr>
+<a name="Section_1.3">
+<h4>1.3: What is SmartList?</h4>
+<blockquote>
+<p>
+SmartList is an email list management system based on procmail.
+<p>
+The current version of SmartList is 3.15, available at
+<a href="https://github.com/procmail-org/SmartList">
+https://github.com/procmail-org/SmartList</a>
+
+</blockquote>
+<hr>
+<a name="Section_1.4">
+<h4>1.4: Is there more documentation available?</h4>
+<blockquote>
+<p>
+The best documentation is the <a href="Manual.html">SmartList manual</a>
+contained within the SmartList sources.
+Every list maintainer should first read this <a href="Manual.html">manual</a>
+to understand how SmartList works and to save a lot of time if problems occur later.
+<p>
+The <a href="Manual.html">SmartList manual</a> is available at
+<a href="Manual.html">https://www.animalgenome.org/Smartlist/Manual.html</a>
+as well as in the .etc directory of a normal SmartList install.
+<p>
+Next, the distribution comes with considerable amounts of example code, which is to
+be found in the .examples directory of your installation.
+<p>
+There are actually several FAQs that people have put together, and you might very
+well find some useful bits in the others.  There appears to be a considerable overlap
+in these documents, but what the heck.  :) Check out:<ul>
+<li><a href="http://www.hardlink.com/Support/Smartlist/">The Internet Hardlink Co Smartlist FAQ</a>
+<li><a href="http://www.pure.ch/pub/smartlist/old/SmartList-FAQ">Werner Reisberger's
+SmartList FAQ</a>
+</ul>
+<p>
+You can also search in the list archive(s) (see question "Is there an archive of the mailing list?")
+<p>
+Finally, SmartList is heavily based on procmail, and in fact many questions about how to
+do specialized things in SmartList end up being mainly procmail questions.  You might want to
+check out:<ul>
+<li><a href="http://www.iki.fi/~era/procmail/">http://www.iki.fi/~era/procmail/</a> and
+<li><a href="http://www.iki.fi/~era/procmail/links.html">http://www.iki.fi/~era/procmail/links.html</a>
+</ul>
+
+</blockquote>
+<hr>
+<a name="Section_1.5">
+<h4>1.5: How does SmartList work?</h4>
+<blockquote>
+<p>
+SmartList is based on a set of procmail scripts to process emails suitable
+for the purpose of a mailing list. If you want to know how the emails
+will be processed take a look into the <a href="Manual.html#3m">SmartList manual
+section "3m. Schematic overview of what goes on behind the scenes"</a> 
+
+</blockquote>
+<hr>
+<a name="Section_1.6">
+<h4>1.6: Where can I get SmartList?</h4>
+<blockquote>
+<p>
+SmartList needs also Procmail.
+<p>
+The latest version of Procmail can be found at:
+<a href="http://www.procmail.org">http://www.procmail.org</a>
+or
+<a href="ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/procmail.tar.gz">
+ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/procmail.tar.gz
+</a>
+<p>
+The latest version of Smartlist can be found at:
+<br>
+<!--
+Old and out of date reference:
+<a href="ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/SmartList.tar.gz">
+ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/SmartList.tar.gz
+</a>
+ -->
+<a href="http://www.procmail.org/SmartList-3.15.tar.gz">http://www.procmail.org/SmartList-3.15.tar.gz</a>
+<br>or<br>
+<a href="ftp://ftp.procmail.org/pub/procmail/SmartList-3.15.tar.gz">ftp://ftp.procmail.org/pub/procmail/SmartList-3.15.tar.gz</a>
+<p>
+The procmail homepage, <a href="http://www.procmail.org">http://www.procmail.org</a>
+, includes a list of
+mirror sites at which this and related package should be obtainable, as well as 
+links to PGP signatures for the above.
+
+</blockquote>
+<hr>
+<a name="Section_1.7">
+<h4>1.7: Is there a SmartList Support mailing list?</h4>
+<blockquote>
+<p>
+Yes. for more information, see
+<a href="http://MailMan.RWTH-Aachen.DE/mailman/listinfo/smartlist">
+http://MailMan.RWTH-Aachen.DE/mailman/listinfo/smartlist</a>
+<p>
+Another mailing list, for developers is
+<p>
+smartlist-dev-request@cuci.nl
+<p>
+<b>Before you post to these or any other support lists</b> you are <i>strongly</i> encouraged to
+read and understand Eric S. Raymond's excellent advice on
+<a href="http://www.catb.org/~esr/faqs/smart-questions.html">"How To Ask Questions The Smart Way"
+at http://www.catb.org/~esr/faqs/smart-questions.html</a>
+<p><b>NOTE: This is NOT a link to a help desk for this or any other software project!</b>
+
+</blockquote>
+<hr>
+<a name="Section_1.8">
+<h4>1.8: Is there an archive of the mailing list?</h4>
+<blockquote>
+<p>
+Yes, at
+<p>
+<a href="http://mailman.rwth-aachen.de/pipermail/smartlist/">
+http://mailman.rwth-aachen.de/pipermail/smartlist/
+</a>
+<p>
+
+</blockquote>
+<hr>
+<a name="Section_1.9">
+<h4>1.9: What's the purpose of the rc.local.* files?</h4>
+<blockquote>
+<p>
+They let you enhance or alter the function of SmartList by calling procmail
+scripts at different states of email processing.
+
+</blockquote>
+<hr>
+<a name="Section_1.10">
+<h4>1.10: How can I see what's going on (diagnostics)?</h4>
+<blockquote>
+<p>
+If SmartList sends out messages to the maintainer or the list, it adds
+message headers beginning with "X-Diagnostics:". Every maintainer
+should read these header lines to recognize problems with the
+list.
+<p>
+<p>
+SmartList usually creates by default in every list a log file called
+"log". If you want to trace a problem with a list you can set the
+variable VERBOSE in rc.custom to "on". Subsequently, every processed
+message will create a lot of debugging information in the log file.
+<p>
+Don't forget to turn it off later.
+
+</blockquote>
+<hr><h3>2: Basic List Administration</h3>
+<hr>
+<a name="Section_2.1">
+<h4>2.1: What does "uncomment" mean?</h4>
+<blockquote>
+<p>
+This question seems very trivial but experience showed that many
+people have problems understanding how to (de)activate a
+variable in the rc.custom file.
+<p>
+To uncomment a line in the file, remove all hashmarks (#) from the front
+of the line (if there is more than one, be sure and remove them all),
+and change the value if necessary. For example, the moderate section in
+the standard distribution looks like this:
+<p>
+<pre>
+#moderated_flag
+##moderated_flag=       yes             # uncomment this to make the list
+                                        # moderated (you must create a
+</pre>
+<p>
+For example, to turn your list into a moderated list, remove the two hash
+marks from the line that says "moderated_flag = yes", so the section now
+looks like this:
+<p>
+<pre>
+#moderated_flag
+moderated_flag=       yes               # uncomment this to make the list
+                                        # moderated (you must create a
+</pre>
+<p>
+Note that, anything <u>after</u> a hashmark on a line is considered a comment,
+and anything before any hashmarks (if any) is uncommented.
+So, you can uncomment a feature setting, and still have a comment on that line,
+out towards the end.
+<p>
+To turn something off, uncomment the corresponding flag/variable name and don't
+assign anything to it.  This turns the flag off by removing it from memory.
+<p>
+<b>NOTE:</b>
+The config files ship with the current running default commented out with
+a single hash (#), so you can see what the default is.  You should probably
+leave that line alone.  The line after that, commented with two hash marks,
+is typically the one you want to uncomment to change SmartList's behavior.
+For example, this default configuration allows non-members to send messages
+to the list:
+<p>
+<pre>
+#foreign_submit =       yes
+##foreign_submit                        # uncomment this line if you
+                                        # want to restrict submitting to
+                                        # people on the accept list
+</pre>
+<p>
+Remember that in these cases if you uncomment the line that is single-hashed, it makes no
+difference, since the single-hashed commented line shows you what the default
+in rc.init is. So if that is what you want, you can leave things alone
+(<u>both</u> lines commented), since it's already set that way. If you want to
+<u>change</u> the flag, you would uncomment the double-hashed lines, like:
+<p>
+<pre>
+#foreign_submit =       yes
+foreign_submit                          # uncomment this line if you
+                                        # want to restrict submitting to
+                                        # people on the accept list
+
+</pre>
+<p>
+<b>NOTE</b> Be sure the text editor you use saves text in "UNIX" text
+format, with only a newline character at the end of each line, and
+<u>not</u> a  carriage-return or carriage-return newline pair.  Many
+windows and Mac based text editors insert that carriage-return, and
+this can break your configuration files.
+<p>
+If you end up with carriage returns in your text files, you can remove them with
+perl, like this:  (this particular example assumes the file you want to clean is 
+<font face="courier">rc.local.s20</font>, change this file to be the one that needs
+cleaning):
+<pre>
+perl -p -i -e 's/\r//' rc.local.s20
+</pre>
+
+</blockquote>
+<hr>
+<a name="Section_2.2">
+<h4>2.2: How do I make the list Open/Closed?</h4>
+<blockquote>
+<p>
+To make the list closed subscription (i.e. the maintainer has to
+approve subscriptions), uncomment the auto_subscribe line in rc.custom,
+and set it to read:
+<pre>
+auto_subscribe = no
+</pre>
+To make the list closed for unsubscriptions, do the same thing with the
+auto_unsubscribe line.
+<p>
+If you're reading this, then perhaps you'd also be interested in section
+<a href="#Section_8.1">
+8.1: How can I make my list moderated?
+</a>.
+
+</blockquote>
+<hr>
+<a name="Section_2.3">
+<h4>2.3: How can I disable automatic unsubscription?</h4>
+<blockquote>
+<p>
+<ol>
+<li>Set the variable auto_unsubscribe in rc.custom to an empty value.
+<li>Remove the line <pre>(Only addresses below this line can be automatically removed)</pre> from the dist file.
+</ol>
+<b>NOTE:</b> Occasionally someone encounters trouble where their list
+won't allow people to unsubscribe.  The first thing to check if you have
+this trouble is that your dist file contains the line
+<pre>(Only addresses below this line can be automatically removed)</pre>
+<p>
+<b>NOTE:</b> See <a href="#Section_2.1">
+Section 2.1: What does "uncomment" mean?</a> for a discussion of text file
+formatting issues that can BREAK your text files.
+
+</blockquote>
+<hr>
+<a name="Section_2.4">
+<h4>2.4: How can I prevent certain people from automatic unsubscription?</h4>
+<blockquote>
+<p>
+Everything in the dist file preceding the line containing: '(Only
+addresses below this line can be automatically removed)' is write
+protected from changes by multigram (i.e. these addresses can never be
+automatically/accidentally unsubscribed).
+
+</blockquote>
+<hr>
+<a name="Section_2.5">
+<h4>2.5: How do people subscribe/unsubscribe to the list?</h4>
+<blockquote>
+<p>
+By sending a message to the listname-request address with the message
+'subscribe' or 'unsubscribe' in the body or the subject of the mail,
+if the list is open, they will be added to it, if it is a closed list
+the request will be forwarded to the list maintainer.
+
+</blockquote>
+<hr>
+<a name="Section_2.6">
+<h4>2.6: How do I change the admin password for my list?</h4>
+<blockquote>
+<p>
+The password is stored in the rc.custom file.
+
+</blockquote>
+<hr>
+<a name="Section_2.7">
+<h4>2.7: How do I enable 'auto help'?</h4>
+<blockquote>
+<p>
+By uncommenting the appropriate "auto_help" line in the rc.custom file
+the list will respond to every undecipherable request message as if it
+requested help. Messages that will still get through to the maintainer
+are those:
+<ul>
+<li>that seem to come from a daemon.
+<li>which look like a reply.
+</ul>
+
+</blockquote>
+<hr>
+<a name="Section_2.8">
+<h4>2.8: How can I tell SmartList to notify me when someone subscribes/unsubscribes?</h4>
+<blockquote>
+<p>
+By setting the cc_requests or cc_unsubrequests variables in the
+rc.custom file to yes (making sure to uncomment it).
+
+</blockquote>
+<hr>
+<a name="Section_2.9">
+<h4>2.9: How can I automatically subscribe people who post to the list?</h4>
+<blockquote>
+<p>
+Instead of rejecting submissions by people not on the accept (dist)
+list, you can enable "force_subscribe". This will cause people
+submitting mails to the list to be autosubscribed to the list if they
+were not in the dist file.
+
+</blockquote>
+<hr>
+<a name="Section_2.10">
+<h4>2.10: How can I add a short message file to the top or the bottom of all the mailing list messages?</h4>
+<blockquote>
+<p>
+Uncomment the line "RC_LOCAL_SUBMIT_20 = rc.local.s20" from your
+rc.custom file, and add the following to your rc.local.s20 file:
+<pre>
+<p>
+#
+# Adding a disclaimer in front of every mail:
+#
+<p>
+:0 fhw
+| cat - header.txt
+<p>
+#
+# Appending a footer to every outgoing mail:
+#
+<p>
+:0 fbw
+| cat - footer.txt
+<p>
+</pre>
+<p>
+You will also need to create a file called header.txt or one called
+footer.txt, which contains the text to add to the message (this file can
+be empty though, so you can create the files, but only fill them in when
+you need to add something)
+<p>
+There's a catch, however.  If you are using HTML/MIME formatting in your messages
+then you need to also read
+<a href="#Section_8.13">Section 8.13: 
+Why are MIME and HTML emails a problem for SmartList?</a>
+
+</blockquote>
+<hr>
+<a name="Section_2.11">
+<h4>2.11: How can I keep the automatically added messages from multiplying when people quote them all the time?</h4>
+<blockquote>
+<p>
+A small refinement here: if you add something like this:
+<p>
+<pre>
+#
+# Appending a disclaimer to every outgoing mail:
+#
+<p>
+:0 fbBw
+* ! to unsubscribe
+| cat - footer.txt
+</pre>
+<p>
+then (assuming that the phrase "to unsubscribe" appears in your
+footer.txt file), the footer won't be repeated if some bozo list member
+quotes an entire message without trimming the footer. (Answer submitted
+by Doug Landauer)
+<p>
+An even cleaner solution, developed by Paul Thomas and Era Eriksson is to 
+pull in content from your actual footer.txt to check and see if that text
+already exists in the message.  This has the advantage of tending to automatically
+track changes you might make to your footer.txt file...
+<pre>
+TEXT=`sed -n '2 p' &lt;footer.txt`
+:0 fbBw
+* $ ! $\TEXT
+| cat - footer.txt
+</pre>
+What this does is load the variable <b>TEXT</b> with a line  of text from your footer.txt
+file (the second line, in this example), and use that data for its test.
+Note that you need two <b>$</b>'s -- one to say "here's the variable I want to
+interpolate" <b>($TEXT)</b> and one in front of the condition to say "interpolate
+variables in this condition".  Also note that <b>$\TEXT</b> is a special form of
+<b>$TEXT</b> where regex specials will be escaped in the interpolated value.
+So if the second line of the footer says "*** cut here ***" then that
+is not a valid regular expression, but "\*\*\* cut here \*\*\*" is.
+
+</blockquote>
+<hr>
+<a name="Section_2.12">
+<h4>2.12: How can I automatically send files to new subscribers?</h4>
+<blockquote>
+<p>
+You can create a file named "subscribe.files" in the list directory.
+It can contain any number of archive-server commands. The results
+(i.e. the files requested) will be sent to the new subscriber.
+
+</blockquote>
+<hr>
+<a name="Section_2.13">
+<h4>2.13: Can I add comments to the addresses in the dist file?</h4>
+<blockquote>
+<p>
+Yes. See <a href="Manual.html#5">Chapter 5 of the SmartList manual</a> for the exact format and limitations.
+<p>
+However, according to Paul Thomas:
+<blockquote>
+"Perhaps it should be noted that comments in the
+dist file confuse multigram and those addresses have to be removed
+by hand should they desired to be unsubsribed, start bouncing, etc."
+</blockquote>
+Another clue comes from Donald MacDougall who suggests:
+<blockquote>
+Put the real name in between parentheses thus:
+<p><pre>
+emailname@emailaddress (Real Name)
+</pre>
+</blockquote>
+
+</blockquote>
+<hr>
+<a name="Section_2.14">
+<h4>2.14: How does someone access the archive server?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#4">Chapter 4 of the SmartList manual</a>.
+<p>
+Additionally, there are web interfaces to allow searching archives.
+A combination of Mhonarc, Wilma and Glimpse was reported to work well,
+and more information is available on the Mhonarc site.
+<p>
+<ul>
+<li>Mhonarc: <a href="http://www.mhonarc.org/">http://www.mhonarc.org/</a>
+</ul>
+
+</blockquote>
+<hr>
+<a name="Section_2.15">
+<h4>2.15: What does "delink" mean?</h4>
+<blockquote>
+<p>
+delink is a shell script in the .bin directory of your SmartList
+installation which lets you remove the hard link from a file.
+This is important for list files like rc.init which are by
+default hard linked across all lists.
+<p>
+Usage: <font face="courier"><b>delink</b> <i>filename</i></font>
+<p>
+A set of files which are hard linked together have the quality that a change made
+to any of those files will be reflected in all of them.  In other words,
+all files in a hard linked set are always identical.  This is because linked files
+<u>are the same file</u>, simply pointed to from different places on the machine.
+So, to make changes to only one file of a link set, you must first get that file
+to not simply be a reference pointer to the other link members, but be a distinct file.
+<p>
+If you want to make one file in a hard linked set different from the others,
+perhaps to customize one list differently from the others, then you must
+first remove that file from the hard linked set, using the <font face="courier"><b>delink</b></font> tool or the equivalent.
+<p>
+You can use the <i>showlink</i> tool to get some idea of what a file is hard linked to.
+Note that the <i>showlink</i> tool is only designed to show hard links <u>within the
+SmartList file tree</u>.
+<p>
+If you cannot run shell commands against your list control files, you may be able to <font face="courier"><b>delink</b></font>
+a file by copying the file to be delinked to a new name, then moving that copied file back
+to the name of the original file you were trying to <font face="courier"><b>delink</b></font>.
+<p>
+Alternatively, you can <font face="courier"><b>delink</b></font> a file by downloading it (scp, sftp or ftp), deleting the file from
+the server, and re-uploading it.
+
+</blockquote>
+<hr>
+<a name="Section_2.16">
+<h4>2.16: How do I add another list of accept addresses?</h4>
+<blockquote>
+<p>
+By default, the accept list (those who can submit to the list even if foreign_submit
+is off) is linked to the dist list.  You may want to add another list of valid submitters,
+such as to allow both list and digest recipients to post to a list.
+<p>
+Additionally, you may want to add yet another accept list, which could include the list owner,
+or other valid senders:
+<ol>
+<li>Unlink rc.submit.
+<li>Find the line that ends with:
+<pre>
+ -x$listaddr -x$listreq accept accept2
+</pre>
+<li>Change it to:
+<pre>
+ -x$listaddr -x$listreq accept accept2 accept3
+</pre>
+</ol>
+<p>
+(Tip o' the hat to Paul Thomas)
+<p>
+Here is another hint, submitted by Scott Pallack:
+<p>
+I use 3accept instead of accept3.  My list has both normal (dist linked to
+accept) and digest (dist linked to accept2) subscribers and I can put
+additional addresses, such as the listowner, alternative addresses for
+list members, etc., into the 3accept and still be able to do things like:
+<pre>
+grep -i user@domain.net acc*
+cat acc*|grep @|sort|uniq|wc
+cat acc*|grep @|sort|uniq -d
+</pre>
+etc.
+
+</blockquote>
+<hr>
+<a name="Section_2.17">
+<h4>2.17: Hello, Is there a list of x-commands somewhere?</h4>
+<blockquote>
+<p>
+Send the X-Command 'help' to your server.  ;)
+
+</blockquote>
+<hr>
+<a name="Section_2.18">
+<h4>2.18: How to track bounces from addresses not on list?</h4>
+<blockquote>
+<p>
+Through the magic of email forwarding, it's possible for a list to 
+sustain bounces from addresses that are not directly subscribed.  The
+scenario is that address A, subscribed, is configured to forward to
+address B.  For whatever reason, email to address B starts bouncing,
+and your list gets 'error delivering email to B' even though address
+B is not on the list.  This situation often leaves no useful clues that
+an admin might use to remove the actual offending email address (A).
+<p>
+The most reliable way to track this one down is by the use of a "probe."
+This is a special mailing that goes out to all list recipients such that
+<b>each email is unique</b>.  Smartlist is not capable of generating
+such emails, so an admin must create such a system using their favorite
+scripting language.  Each email body should contain the subscribed
+address to which it's being sent (address 'A' in our scenario above).
+<p>
+Note: Probe generators are very simple to write, and tend to be highly
+customized.  If you have trouble with the idea of creating such a thing,
+contact your local guru, or take the time to learn a smattering
+of Perl, Python, or a similar scripting language.  Remember that the only
+people who will actually receive your probe are recipients in good standing,
+so the probe should be worded to strengthen your list community...
+<p>
+The pseudocode would look something like this:
+<p>
+<pre>
+	Open dist list file.
+	Loop: for each email on list...
+		Create unique email message. (e.g. include current address)
+		Inject message into email system.
+	... Next in loop.
+	Close dist list.
+</pre>
+<p>
+A sample email might look like this -- in this example you would replace all
+instances of 'A@example.com' with each individual email address on your
+distribution list, one at a time:
+<pre>
+--- cut here ---
+To: Hapless List Subscriber &lt;A@example.com&gt;
+From: Beleagured Email List &lt;List@my-list-server-domain-example.net&gt;
+X-Original-Recipient: A@example.com
+Subject: Administratrivia
+
+Greetings.
+
+This email is being sent to you at A@example.com
+
+You are receiving this email because you are subscribed to
+Beleagured Email List &lt;List@my-list-server-domain-example.net&gt;
+
+Here is some hopefully useful information about this list, to take
+the sting out of receiving what is essentially a piece of junk email...
+--- cut here ---
+</pre>
+<p>
+In creating a probe email, samples of the offending bounce email may be
+helpful to craft the probe such that the tracing information survives 
+the bounce process.  In order to keep the signal-to-noise ratio higher,
+some list admins use a probe to send 'Administratrivia' -- list rules,
+charter, instructions, web sites, etc.
+<p>
+Sometimes, bounce return messages contain so little information that it
+is not possible to determine the offending address from a simple probe.
+In such cases, it may be necessary to send out probes to successively
+narrower subsets of your distribution list, and use a process of
+elimination to home in on an offending address.  This process generates
+a lot of noise on a list, and can be quite problematic on large or high
+volume lists.
+
+</blockquote>
+<hr><h3>3: Remote Administration</h3>
+<hr>
+<a name="Section_3.1">
+<h4>3.1: How do I use X-Command for remote administration?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#2">chapter 2 of the SmartList manual</a>.
+<p>
+And no, you can't just put X-Commands in the Subject line of the header.
+<p>
+You either need to use a mail program which lets you create custom headers
+("X-Command: "), use the hint below for including commands in the message body,
+or use another program to emit X-Command email, such as a web interface or
+a simple perl program.
+
+</blockquote>
+<hr>
+<a name="Section_3.2">
+<h4>3.2: Can I issue X-Commands from the message body?</h4>
+<blockquote>
+<p>
+Yes.  There is a recipe you can find in .examples/rc.local.r00 that has the 
+effect of causing SmartList to look in the beginning of the message body as well
+as within the message header for commands.  This trick is helpful if you have a
+MUA that makes it difficult or impossible to send custom headers.
+<p>
+To use this recipe, 
+<ol>
+<li>Make a copy of .examples/rc.local.r00 called rc.local.r00 and place it
+in the list directory.
+<li>Uncomment the line referencing rc.local.r00 in the list's rc.custom file.
+</ol>
+<p>
+Now X-Commands can go at the top of the message body.  Add a blank line
+between the X-Commands and any other message content (as for instance with
+moderator approval).
+<p>
+There's a catch, however.  If you are using HTML/MIME formatting in your messages
+then you need to also read
+<a href="#Section_8.13">Section 8.13: 
+Why are MIME and HTML emails a problem for SmartList?</a>
+
+</blockquote>
+<hr>
+<a name="Section_3.3">
+<h4>3.3: How do I subscribe/unsubscribe people to my list?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#2">chapter 2 of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_3.4">
+<h4>3.4: How do I get a list of the subscribers?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#2">chapter 2 of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_3.5">
+<h4>3.5: How can I prevent the accidental multiple subscription of an address with x_command?</h4>
+<blockquote>
+<p>
+Modify the x_command script with the following patch:
+<pre>
+51,66c51,60
+<          $echo $2 | $multigram -c -l32000 dist >/dev/null
+<          if test $? -ne 0; then
+< 	   $echo "From $2 " >$tmprequest
+< 	   $echo "From: request ($listreq)" >>$tmprequest
+< 	   $echo "Reply-To: $2" >>$tmprequest
+< 	   $echo "To: $listreq" >>$tmprequest
+< 	   $echo "Subject: subscribe $2" >>$tmprequest
+< 	   $echo "$2" >$tmpfrom
+< 	   $test -z "$subscribe_log" ||
+< 	    $echo "x_command: subscribe" >>$subscribe_log
+< 	    $subscribe <$tmprequest ||
+<    	   $echo "X-Diagnostic: Unscreened, not subscribed"
+<      else
+<        $echo ""
+<        $echo "$2 is already subscribed!"
+<      fi
+---
+> 	 $echo "From $2 " >$tmprequest
+> 	 $echo "From: request ($listreq)" >>$tmprequest
+> 	 $echo "Reply-To: $2" >>$tmprequest
+> 	 $echo "To: $listreq" >>$tmprequest
+> 	 $echo "Subject: subscribe $2" >>$tmprequest
+> 	 $echo "$2" >$tmpfrom
+> 	 $test -z "$subscribe_log" ||
+> 	  $echo "x_command: subscribe" >>$subscribe_log
+> 	 $subscribe <$tmprequest ||
+> 	  $echo "X-Diagnostic: Unscreened, not subscribed"
+</pre>
+<p>
+
+</blockquote>
+<hr>
+<a name="Section_3.6">
+<h4>3.6: Is there a web interface for administering SmartList?</h4>
+<blockquote>
+<p>
+Werner Reisberger &lt;werner@pure.ch&gt; has released a web interface
+for the remote administration/configuration of SmartList lists, called 
+rconfig.  The current version is a complete rewrite of older versions, 
+and appears to be quite featureful. (Currently its
+<!a href="http://ftp.pure.ch/pub/smartlist/rconfig.0.05.tar.gz">
+download site</a> is not available. You may want to write to him for
+details.)
+<p>
+"ulf1" developed a Smartlist manager in PHP (last updated in 2014). It 
+can be found at<br>
+<a href="https://www.drupal.org/project/smartlist_manager">
+https://ftp.drupal.org/files/projects/smartlist_manager-6.x-1.x-dev.tar.gz</a>
+<P>
+Or, there is a perl cgi script which lets you send all X-Commands
+via the web. It's called x_command and is available at
+<p>
+<a href="http://www.pure.ch/pub/smartlist/">http://www.pure.ch/pub/smartlist/
+</a>
+<p>
+You can also use Matt Wright's "Formmail" script to provide a
+web based sign-up form.  You can get the script at
+<a href="https://www.scriptarchive.com/formmail.html">https://www.scriptarchive.com/formmail.html</a>
+<p>
+
+</blockquote>
+<hr>
+<a name="Section_3.7">
+<h4>3.7: Why isn't SmartList adding/removing names even though it says it is?</h4>
+<blockquote>
+<p>
+There are several possible reasons why SmartList might fail to update
+the dist list.  The two most common reasons seem to be:
+<ol><li>An incorrect installation (possibly from a faulty package), or
+<li>Incorrect file permissions.</ol>
+<p>
+Assuming your installation is OK, check the file permissions of your
+dist file.  The dist file must have permissions that allow SmartList
+to update it.  Also check the flist binary.  The 's' (setuid/setgid)
+permissions of the flist binary
+determine what rights it has when it runs.  The dist file must be
+writable by a process with those permissions.
+<p>
+<b>NOTE:</b> See <a href="#Section_2.1">
+Section 2.1: What does "uncomment" mean?</a> for a discussion of text file
+formatting issues that can BREAK your text files.
+
+</blockquote>
+<hr><h3>4: Restrictions and Security</h3>
+<hr>
+<a name="Section_4.1">
+<h4>4.1: How can I restrict who can subscribe to my list?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#3b">chapter 3b of the SmartList manual</a>.
+<p>
+In addition you can use the confirm addon to forward
+all subscription requests at first to the maintainer who has
+to confirm the request before the new address will be added to the
+list.
+
+</blockquote>
+<hr>
+<a name="Section_4.2">
+<h4>4.2: How can I restrict who can post to my list?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#3c">chapter 3c of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_4.3">
+<h4>4.3: How can I prevent that someone (un)subscribes someone else without their knowledge?</h4>
+<blockquote>
+<p>
+Disable the variable auto_unsubscribe in rc.custom or use
+the confirm addon.
+
+</blockquote>
+<hr>
+<a name="Section_4.4">
+<h4>4.4: Is there a possibility to authenticate postings with SmartList?</h4>
+<blockquote>
+<p>
+No. email is an insecure tool and messages are easy to fake. SmartList
+cannot make it more secure. Each message could be faked on a list.
+To make email more secure use PGP or other encryption packages for
+email usage.
+
+</blockquote>
+<hr>
+<a name="Section_4.5">
+<h4>4.5: How can I restrict who can access the archive server?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#4b">chapter 4b of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_4.6">
+<h4>4.6: Can SmartList confirm (un)subscriptions?</h4>
+<blockquote>
+<p>
+Yes, You need an addon to SmartList to confirm subscriptions and/or
+unsubscriptions. The addon is called confirm and is available
+at:
+<p>
+<a href="http://ftp.pure.ch/pub/smartlist">
+http://www.pure.ch/pub/smartlist/
+</a>
+<p>
+<b>Confirm</b> is used to verify email addresses and intent during 
+subscription and unsubscriptiong operations to a SmartList list.
+This prevents malicious un/subscription of email addresses
+and ensures that only working addresses are added to the list.
+
+</blockquote>
+<hr>
+<a name="Section_4.7">
+<h4>4.7: How can I allow posts only from a certain domain, without using the accept file?</h4>
+<blockquote>
+<p>
+You need to apply the patch below to rc.submit (<a href="#Section_2.15">delink</a> first) and
+copy the subcreen script within the .examples directory to
+yourlist_dir/postscreen.
+<p>
+E. g. if you want to allow all postings from anyuser@friendly.dom
+and reject all other addresses which are not in the accept file,
+the lines
+<pre>
+case "$1" in
+*@friendly.dom            exit 0 ;;       # This one is ok
+esac
+<p>
+exit 1          # reject everything else
+</pre>
+<p>
+will be sufficient.
+<p>
+Patch to rc.submit:
+<p>
+<pre>
+102a103,107
+>   * 2^0 ? if test -f postscreen; then \
+>           screenadress=`formail -xFrom: | sed -e 's/.*<\(.*\)>/\1/' \
+>           -e 's/\(.*\) (.*)/\1/'`; \
+>           postscreen $screenadress;\
+>           fi
+</pre>
+<p>
+
+</blockquote>
+<hr>
+<a name="Section_4.8">
+<h4>4.8: How to bounce messages with a certain word in the subject?</h4>
+<blockquote>
+<p>
+If the string you're filtering against is "foobar", then put
+something like this in rc.local.s00
+<pre>
+    :0
+    * ^Subject:[ ]*.*foobar.*
+    | formail -rtk -I "Subject: Posting of follow-up rejected (was: $MATCH)"
+</pre>
+
+</blockquote>
+<hr>
+<a name="Section_4.9">
+<h4>4.9: How to automatically notify posters of messages bounced for being too large?</h4>
+<blockquote>
+<p>
+"By default, posts that are too long 
+are forwarded to the list owner, who has to write the person manually to explain what's
+happened.  It would be more convenient if SmartList would send them an
+automated notice..."
+<p>
+Try this in rc.local.s00:
+<pre>
+:0 w
+* !< $size_limit
+|formail -rk -I "X-Loop: $listreq" -I "From: $listreq" \
+ -I "Subject: Sorry, message size for $list is max.: $size_limit bytes!" |\
+ $SENDMAIL -t
+
+</pre>
+It should bounce the whole message, mentioning the max. message size in the
+subject.
+<p>
+Tip 'o the hat to Werner Reisberger for this solution.
+
+</blockquote>
+<hr>
+<a name="Section_4.10">
+<h4>4.10: How do I allow digest recipients to post to the regular list?</h4>
+<blockquote>
+<p>
+Create a symlink or hardlink from the digest dist list to become the
+regular list's accept2 file.
+
+</blockquote>
+<hr>
+<a name="Section_4.11">
+<h4>4.11: How to restrict postings from a particular sender?</h4>
+<blockquote>
+<p>
+After consulting <a href="Manual.html#3b">
+Section 3b of the manual</a> you may notice that the 'reject' file functionality does not
+extend to checking posters, only subscribers.  Meanwhile, <a href="Manual.html#3c">
+Section 3c</a> assumes that you wish to allow all recipients to be able to post...
+<p>
+To single out a sender for post rejection, you have a couple of Smartlist options.  This
+one comes from Tim Pierce:
+<pre>
+diff -u -r1.5 -r1.6
+--- rc.submit   1999/06/07 15:31:40     1.5
++++ rc.submit   1999/06/23 17:57:17     1.6
+@@ -109,6 +109,20 @@
+           multigram -b1 -m -l$submit_threshold -L$domain \
+            -x$listaddr -x$listreq $accept_files
+    {
++     # Check to see if the poster is on the reject list.  The reject
++     # list overrides the accept list.
++
++     :0
++     * ? formail -X"From " -xFrom: -xReply-To: -xSender: -xResent-From: \
++         -xResent-Reply-To: -xResent-Sender: -xReturn-Path: | \
++         multigram -b1 -l$reject_threshold reject rejectx
++     {
++       :0 wfh
++       | formail -A "X-Diagnostic: Found on the reject list" \
++         -A "X-Diagnostic: `multigram -b1 -l$reject_threshold reject rejectx`"
++
++        HOST=continue_with_rc_request
++     }
+ 
+      INCLUDERC=$RC_LOCAL_SUBMIT_10
+</pre>
+Next, and perhaps simplest in some ways, you can simply add a procmail rule (e.g. in rc.local.s00)
+to drop that sender's postings into the bit bucket...
+<p>
+Finally, "JimO" sends in the following:
+<p>
+"Or, if you're up for a bit of work, and this poster sometimes has
+something useful to contribute, you can make a mini-moderated
+subset of your subscribers in an rc.custom.s file.  I've got
+something like this in rc.custom.s20:
+<pre>
+:0
+* ^((From|Reply-To).*(\
+   nit@wit\
+  |dumb@dumber\
+  |raving@lunatic\
+  ))
+{    :0
+    * ^X-MYMODERATION: mysecretword
+    {
+        :0 fwh
+        | formail -I X-MYMODERATION
+    }
+    :0 E
+    {
+        :0 fwh
+        | formail -A "X-Diagnostic: Probationary Screen"
+
+        :0
+        ! $maintainer
+    }
+}
+</pre>
+Then, if you want to approve a post, just send it on with the
+X-MYMODERATION header, and hack the Message-ID so it won't get
+rejected as a duplicate.  Needless to say, you want a little
+shell script for the approval-resending process.
+<p>
+Probably more work than most people want, as usually anyone you
+don't want to freely post, you don't want on your list anyway,
+gathering your posters' addresses."
+
+</blockquote>
+<hr><h3>5: Digests</h3>
+<hr>
+<a name="Section_5.1">
+<h4>5.1: How do I turn a non-digest list into a digest?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#3a">chapter 3a of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_5.2">
+<h4>5.2: How often do digests get sent out?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#3a">chapter 3a of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_5.3">
+<h4>5.3: Can I force a digest to be sent every day, even if it is small?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#3a">chapter 3a of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_5.4">
+<h4>5.4: How can I add a message to the beginning of every digest?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#3a">chapter 3a of the SmartList manual</a>.
+
+</blockquote>
+<hr>
+<a name="Section_5.5">
+<h4>5.5: Is there a way to make the digest go out without being an attachment?</h4>
+<blockquote>
+<p>
+(Thanks to Charlie Summers for this one.)
+<p>
+Yes. Change your subscribers' email client, since it's the client that is
+causing the problem, not SmartList. (Sensible clients should "explode" the
+multipart/digest issue into separate messages, not treat the entire digest as
+an attachment.)
+<p>
+If for some reason this isn't an option, then here is a workaround.
+In .bin/digest change:
+<pre>
+Content-Type: multipart/digest; boundary="----------------------------"
+</pre>
+... to:
+<pre>
+Content-Type: text/plain; charset=US-ASCII
+</pre>
+<p>
+Note that this will REQUIRE you to reject HTML email, since if you accept
+it in your list the messages in your digest will look like left-over doggie
+doo with all the HTML tags all over the place...
+<p>
+This will also affect EVERY digest on your server, unless you understand
+enough shell scripting to add an if/fi conditional to change it only for a
+specific list. (It's simple enough to do, but shouldn't be attempted unless
+you have done some shell scripting.)
+<p>
+Later came this follow-up from Charlie, explaining how to make this (or other)
+change to one list only, without editing the global scripts:
+<p>
+SmartList (possibly by design, but it seems to me more an unintentional
+although beneficial side effect of the PATH order) will use scripts first in
+the list directory, <i>then</i> in the ~slist/.bin/ directory. So if one wanted to change
+the list-d digest to text/plain while leaving the others multipart/digest,
+one could copy (cp) the .bin/digest shell script into the list-d/ directory, and
+alter that copy to taste while leaving the .bin/digest shell script alone for
+use by the other digests on the server. You can use this method to completely
+change the digest header look on one digest without affecting any other list,
+too.
+<p>
+I still like the if/fi method myself since it keeps everything together in
+one shell script for easy reference and debugging, but may find cp'ing the
+.bin/digest script a _whole_ lot easier.
+
+</blockquote>
+<hr><h3>6: Interaction of SmartList with Message Transfer Agents (MTAs)</h3>
+<hr>
+<a name="Section_6.1">
+<h4>6.1: Does SmartList run with Postfix?</h4>
+<blockquote>
+<p>
+Yes. If you use the sendmail replacement of postfix you don't need
+to change anything. Just make sure that SmartList can find the sendmail
+wrapper.
+<p>
+For large lists it may be advantageous to replace choplist with
+the direct sendmail wrapper call because postfix doesn't need a helper
+program for the load balancing.  Uncomment the appropriate line in rc.init, 
+and remember to add an alias to your postfix aliases db which points to
+your dist file, as in:
+<pre>
+example-dist:  :include:/path/to/your/example/dist
+</pre>
+<b>However</b> if you choose to let postfix replace choplist you remove
+SmartList's ability to filter out undesirable messages -- anybody will
+be able to email directly to the alias and have their message go onto your list.
+<p>
+You might also find the <a href="http://www.postfix.org/faq.html">
+Postfix FAQ</a> useful, in particular the section on 
+"Protecting internal email distribution lists"
+<a href="http://www.postfix.org/faq.html#internal-list">
+http://www.postfix.org/faq.html#internal-list
+</a>
+
+...
+
+</blockquote>
+<hr>
+<a name="Section_6.2">
+<h4>6.2: Does SmartList run with qmail?</h4>
+<blockquote>
+<p>
+Yes. If you use the sendmail replacement of qmail you don't need
+to change anything within SmartList.
+<p>
+For large lists Tracy R Reed &lt;treed@freeside.ultraviolet.org&gt;
+suggested the following:
+<p>
+To: djb-qmail@koobera.math.uic.edu, SmartList@Informatik.RWTH-Aachen.DE<br>
+Subject: smartlist and qmail<br>
+Date: Mon, 29 Sep 1997 14:10:42 -0700 (PDT)
+<p>
+<p>
+I have noticed that using choplist to feed qmail's sendmail clone
+(because
+choplist expects sendmail) to distribute mail to my large mailing
+list was incurring massive amounts of overhead and really slowing
+things down. If I could just get smartlist to call qmail-inject
+directly, it would greatly speed things up. To this end, I modified
+my rc.init file:
+<p>
+<pre>
+alt_sendmail="smart-qmail dist $listreq"
+</pre>
+<p>
+And put this perl script in ~list/.bin/smart-qmail
+<p>
+<pre>
+#!/usr/bin/perl
+$from = $ARGV[1];
+$addyfile = $ARGV[0];
+while(<STDIN>) {
+  $message .= $_;
+  }
+<p>
+open(BLAH,"<$addyfile") || die "Doh!  No address file!\n";
+$x = 0;
+while (<BLAH>) {
+  if(/Only addresses below this line can be automatically removed/) {
+    next;
+    }
+  chop;
+  $addy .= " ". $_;
+  $x++;
+<p>
+  # 30 is kinda arbitrary, I just don't want to run into any ugly command
+  # line length limits.
+<p>
+  if ($x == 30) {
+    open(INJECT,"|/var/qmail/bin/qmail-inject -f$from $addy");
+    print INJECT $message;
+    close INJECT;
+    $x = 0;
+    $addy = "";
+    }
+  }
+open(INJECT,"|/var/qmail/bin/qmail-inject -f$from $addy");
+print INJECT $message;
+close INJECT;
+</pre>
+<p>
+Another note -- Paul Thomas points out that
+<blockquote>
+"Qmail bounces email differently than sendmail. It
+does a 'local' bounce and a 'remote' bounce. SmartList will process
+to the best of it's ability a 'remote' bounce, but 'local' bounces
+are written to a qmail "Mailbox' file and overlooked by SmartList. In
+short, qmail will work with SmartList but to make everything work right
+one is looking at a major hack of SmartList."
+</blockquote>
+
+</blockquote>
+<hr>
+<a name="Section_6.3">
+<h4>6.3: Sendmail can't run flist. Why? (smrsh)</h4>
+<blockquote>
+<p>
+If you log an error message something like
+<pre>
+554 "|exec /path/to/flist listname"... Service unavailable
+</pre>
+the reason is most probably that sendmail is using the smrsh
+"Sendmail Restricted SHell" environment for shell calls.
+<p>
+The way a message initially gets to the SmartList system is through a
+sendmail alias that pipes the email to the program.  The alias
+probably looks something like:
+<pre>
+listname: "|exec /path/to/flist listname"
+</pre>
+However, some configurations of sendmail attempt to increase security by
+restricting allowable programs to those in a certain directory.  In this case,
+you need to create a symlink to the flist binary in the smrsh directory.
+<p>
+Try these steps:<blockquote><ol>
+<li>Find the correct location of your smrsh directory.  You may have to examine
+your smrsh source, or use the <i>strings</i> command to examine your smrsh binary.
+<p>
+<li>Create a symlink to your flist binary in the smrsh directory:
+<pre>ln -s /path/to/flist /location/of/smrsh/flist</pre> 
+<li>Change the alias for the list to simply be
+<pre>listname: "|flist listname"</pre>
+You don't need the path to flist now, since sendmail is only going to look
+in one place (your smrsh directory).  You don't need the exec either.
+</ul></blockquote>
+<p>
+Don't forget to run <i>newaliases</i> after you modify your aliases file
+to effect your changes.
+
+</blockquote>
+<hr>
+<a name="Section_6.4">
+<h4>6.4: How do I get SmartList to work with different virtual accounts?</h4>
+<blockquote>
+<p>
+I installed SmartList on the different virtual accounts
+and have a link in "/etc/smrsh" to the "flist" program
+in the ".bin" directory of each account... It works but
+only the one linked to "flist"... In order to be able to
+have links to all the "flist" programs of all the accounts
+in "/etc/smrsh", I used different links with different
+names but they just DON'T work... it seems to me
+like Procmail wants the link in "/etc/smrsh" to be named
+"flist" ONLY, in order to work...
+<p>
+All the names need to begin with "flist".  You could use names like
+<dir>
+flist.domain1<br>
+flist.domain2<br>
+...
+</dir>
+(Thanks to Philip Guenther for this one.)
+
+</blockquote>
+<hr><h3>7: Addons and enhancements for SmartList</h3>
+<hr>
+<a name="Section_7.1">
+<h4>7.1: Is it possible to have more than one list maintainer?</h4>
+<blockquote>
+<p>
+Yes apply the following patch (from Alan Stebbens) to your rc.request
+file (don't forget to remove the hard link before). After applying
+the patch you can use several maintainer addresses in rc.custom
+separated by a comma (don't include blanks between the addresses).
+<pre>
+--- installed/rc.request        Thu Oct 31 00:02:23 1996
++++ rc.request  Fri Oct 18 09:11:58 1996
+@@ -291,20 +264,20 @@
+#
+<p>
+# is there more than one maintainer?
+-maintainer_re=$maintainer
+-maintainers=$maintainer
++maintainer_re="$maintainer"
++maintainers="$maintainer"
+Maintainer=Maintainer
+<p>
+:0
+* maintainer ?? ,
+-{ maintainer_re=`echo "$maintainer" | sed -e 's/,/|/g' -e 's/\./\\\./g'`
+-  maintainers=`echo "$maintainer" | sed -e 's/,/ /g'`
++{ maintainer_re="`echo $maintainer | sed -e 's/,/|/g' -e 's/\./\\\./g'`"
++  maintainers="`echo $maintainer | sed -e 's/,/ /g'`"
+Maintainer=Maintainers
+}
+<p>
+:0 wf:dist.lock
+-* $^$X_COMMAND:.*$maintainer_re[        ]+$X_COMMAND_PASSWORD
+</pre>
+<p>
+If you have access to your aliases file, another approach is to set
+the maintainer in rc.request to a "role address" defined in the aliases file to
+expand to all maintainers, for example "mylist-owner".  Maintainers would then use 
+the "mylist-owner" address to issue list commands, and any email generated
+for the maintainer will be delivered to all maintainers defined in the aliases
+file.
+
+</blockquote>
+<hr>
+<a name="Section_7.2">
+<h4>7.2: Can I remotely update files used by SmartList like help.txt?</h4>
+<blockquote>
+<p>
+There is an addon to SmartList that enables you to do this via email or a
+web interface. You should only use this package called rconfig if
+you know how SmartList works. Otherwise you could completely destroy a list.
+rconfig is available at
+<p>
+<a href="http://www.pure.ch/pub/smartlist/">
+http://www.pure.ch/pub/smartlist/
+</a>
+
+</blockquote>
+<hr>
+<a name="Section_7.3">
+<h4>7.3: How can a subscriber temporarily suspend subscription?</h4>
+<blockquote>
+<p>
+There is an addon to SmartList that enables subscribers to suspend their
+subscription for a given number of days. It's called suspend and is
+available at
+<a href="http://www.pure.ch/pub/smartlist/">
+http://www.pure.ch/pub/smartlist/
+</a>
+
+
+</blockquote>
+<hr>
+<a name="Section_7.4">
+<h4>7.4: Where can I find more SmartList information and utilities?</h4>
+<blockquote>
+<p>
+SmartList Utilities and Patches - send email to
+alan.stebbens@software.com with the subject
+<p>
+"send smartlist library".
+
+</blockquote>
+<hr>
+<a name="Section_7.5">
+<h4>7.5: Can SmartList send individualized messages to each list recipient?</h4>
+<blockquote>
+<p>
+No.  SmartList is designed to take advantage of the bulk processing
+capabilities of the MTA.  It is not designed for personalized mailings.
+<p>
+It is certainly possible to use the dist list to generate personalized
+mailings using another program.  This can be very useful to track certain
+types of bounces.
+
+</blockquote>
+<hr><h3>8: Miscellaneous</h3>
+<hr>
+<a name="Section_8.1">
+<h4>8.1: How can I make my list moderated?</h4>
+<blockquote>
+<p>
+See <a href="Manual.html#3f">chapter 3f in the SmartList manual</a>.
+<p>
+Note that if you have enabled a moderator password (see the <b>moderator_PASSWORD</b>
+option in the list's <b>rc.custom</b> file), then the format for the approval header element
+is:
+<pre>
+Approved: the_address_of_one_of_the_moderators moderator_password
+</pre>
+(Thanks to Merrick Munday for that clarification.)
+<p>
+<!-- # 404; 2002-11-19
+There is also this package:
+<p>
+<a href="http://www.mjolner.com/~lbr/moderate/">http://www.mjolner.com/~lbr/moderate/</a>
+<p>
+-->
+Please see
+<a href="SmartList-FAQ.html#Section_3.1">3.1: How do I use X-Command for remote administration?</a>
+and
+<a href="SmartList-FAQ.html#Section_3.2">3.2: Can I issue X-Commands from the message body?</a>
+for more discussion on working with these header-based commands, and complications caused by MIME
+formatted messages.
+<p>
+If you're fortunate enough to be on a machine with a command
+line mail tool such as sendmail/qmail etc, and your email client uses
+standard text format for message saving and/or storage,
+then you might be interested in this suggestion courtesy
+of Martin Mokrejs:
+<p>
+First, save the returned/rejected mail that you wish to approve into
+a new file, making sure that the headers and any attachments are intact.
+(E.g. in pine Export does not save the attachment, so perhaps use it's
+Save function to save it to a new folder, then quit pine or close
+access to that folder).
+<p>
+Next, edit the file, cleaning the headers as necessary, and adding your approved header:
+<pre>
+Approved: maintainer@my.address my-password
+</pre>
+then, pipe the mail file again into your mail, e.g.:
+<pre>
+sendmail -t < rejected-mail
+</pre> 
+In this way, the mail will appear as originating from the original author, 
+not from the maintainer.
+
+</blockquote>
+<hr>
+<a name="Section_8.2">
+<h4>8.2: How can I change the messages that SmartList sends to people?</h4>
+<blockquote>
+<p>
+The messages that SmartList sends out are linked in the ~slist/listname
+directory, and can be edited using any available file editor.
+Note that if you wish to change these files for only one list, then you must first
+<a href="#Section_2.15">delink</a> the file.
+<p>
+The files
+that it sends and their uses are:
+<p>
+<ul>
+<li>help.txt:<blockquote>
+Sent as a response to a help command, or if anything SmartList doesn't understand is sent to the listname-request address.</blockquote>
+<li>subscribe.txt:<blockquote>
+Sent to new subscribers.</blockquote>
+<li>unsubscribe.txt:<blockquote>
+Sent to someone who just unsubscribed.</blockquote>
+<li>archive.txt:<blockquote>
+A description of how to use the archive server, and the commands it understands.</blockquote>
+
+</blockquote>
+<hr>
+<a name="Section_8.3">
+<h4>8.3: How can I add "[listname]" to all of the mailing list messages for easy filtering?</h4>
+<blockquote>
+<p>
+In your rc.custom file, uncomment the line that reads
+"RC_LOCAL_SUBMIT_20 = rc.local.s20", and make a file called
+"rc.local.s20" in your list directory, in that file put this:
+<pre>
+# Send to the digest BEFORE we do anything stupid...it will send it back to
+#  us, but that's ok since we will ignore the duplication
+# NOTE: Don't put this part in if your list isn't digested...
+# (See note from Charlie Summers below)
+:0 c
+|/path/to/flist digested-listname
+
+#
+# NOW munge the subject, append a header/footer, whatever...
+
+# Be sure to replace "[listname]" with what you would like to be at the
+# beginning of the subject line. (Posted to
+# SmartList@Informatik.RWTH-Aachen.DE by Leigh Wolenczak ).
+SUBJ=`formail -zx Subject:`   # extract the subject
+:0fw
+* !  Subject:.*\[listname\]
+* !  Subject:.Re: *
+| formail -I "Subject: [listname] $SUBJ"
+</pre>
+On this subject, Charlie Summers points out:
+<p>
+Using rc.local.s20, lets you modify the email <i>after</i> you add it to the digest,
+thereby helping to avoid needless clutter in the digests.
+This has the added benefit that we don't have to subscribe the digest list
+to the undigested list's dist file and waste a call to sendmail to deliver
+the mail that we can easily pipe directly into flist; it also means the
+additional Received: header fields caused by mailing the file across the
+directory aren't an issue. (I can't figure out why something this simple
+isn't included in the Manual file as The Right Way To Do It.)
+<p>
+Another variation of the above is submitted by Martin Mokrejs:
+<pre>
+# Extract the subject ONLY IF the listname is NOT YET present in the Subject
+:0fh
+* ! Subject:.*\[listname\]
+* ! Subject:[   ]*((R|r)(e|E)):[     ]*
+{ SUBJ=`formail -zx Subject:` }
+  
+  # if the preceding recipe succeeded
+  :0fawh
+  | formail -I "Subject: [listname] $SUBJ"
+</pre>
+<p>
+Another approach, courtesy of Tim Pierce:
+
+"Here's what we're using here.  (This assumes that a `subject_prepend'
+variable is defined in rc.custom.)
+
+<pre>
+     :0f
+     * subject_prepend ?? .
+     * !digest_flag ?? y
+     * $!^Subject:.*\\[${subject_prepend}\\].*
+     * ^Subject:\/.*
+     | formail -I "Subject: [$subject_prepend]$MATCH"
+</pre>
+
+This looks for [$subject_prepend] anywhere in the Subject line,
+not just at the beginning.  So the prepended tag doesn't get
+repeated.  It is possible to get
+
+<pre>
+        Subject: Re: [listname] Re: stuff
+</pre>
+
+but not
+
+<pre>
+        Subject: [listname] Re: [listname] stuff
+</pre>
+..."
+<p>
+Some listers have suggested that the above don't quite cut it, and some better solutions
+are forthcoming.  The problem is to NOT change the subject if it's a reply, or otherwise
+already has the subject tag added...
+<p>
+First, Cary Coutant sent this one in, stating that "This recipe won't add the listname
+if it's already anywhere in the subject line.":
+<p>
+<pre>
+#
+# rc.local.s10
+#
+
+#
+# Insert the list name into the subject field (if not already there)
+#
+
+:0 fhw
+* $ ! ^Subject:.*\[$list]
+* ^Subject:\/.*
+| formail -I "Subject: [$list]:$MATCH"
+</pre>
+<p>
+Jari Aalto has developed, among many other procmail goodies, a recipe
+to control subjects:
+<a href="http://www.procmail.org/jari/pm-code.html">
+http://www.procmail.org/jari/pm-code.html
+</a> and in particular:
+<a href="http://www.procmail.org/jari/pm-code-body.html#272">
+http://www.procmail.org/jari/pm-code-body.html#272
+</a>
+
+</blockquote>
+<hr>
+<a name="Section_8.4">
+<h4>8.4: How can I add a custom header to all of the mailing list messages?</h4>
+<blockquote>
+<p>
+Uncomment the line "RC_LOCAL_SUBMIT_20 = rc.local.s20" from your
+rc.custom file, and add the following to your rc.local.s20 file:
+<pre>
+#
+# Adding some custom headers (although it will work, this is not
+# needed for Reply-To related headers, see the reply_to variable in
+# rc.custom):
+#
+<p>
+:0 fhw
+| formail -i "X-Subliminal-Message: SmartList is great" \
+-I "X-Mailer: procmail, which is great too :-)"
+</pre>
+
+</blockquote>
+<hr>
+<a name="Section_8.5">
+<h4>8.5: How can I remove some headers from all of the mailing list messages?</h4>
+<blockquote>
+<p>
+Uncomment the line "RC_LOCAL_SUBMIT_20 = rc.local.s20" from your
+rc.custom file, and add the following to your rc.local.s20 file
+if you want :
+<p>
+<pre>
+<p>
+#
+# To get rid of some headers:
+#
+<p>
+:0 fhw
+| formail -I X-Mailing-List: -I X-Mailer:
+<p>
+<p>
+#
+# To get rid of all X- fields:
+#
+<p>
+:0 fhw
+| formail -I X-
+</pre>
+
+</blockquote>
+<hr>
+<a name="Section_8.6">
+<h4>8.6: Is there an easy way to remove duplicates from the dist file?</h4>
+<blockquote>
+<p>
+This script was contributed to the SmartList mailing list by Mark David
+McCreary, you can run this from your list directory (where the dist
+file is located), and it will remove the duplicates and sort the
+entries that appear below the "(Only addresses below this line can be
+automatically removed)" line.
+<p>
+<pre>
+#! /bin/sh
+:
+#
+#   rc.dedup.list
+#
+#   mdm 11/5/97   borrow code from  David W. Tamkin, with additional
+#                 suggestions from Martin Konold and Hal Wine
+#
+#
+#  This script will sort and remove duplicates from a Smartlist
+#  distribution file.  Smartlist dist files contain a comment line
+#  that looks like this
+#
+#      (Only addresses below this line can be automatically removed)
+#
+#  Addresses above and including this line will not be sorted.
+#
+<p>
+lockfile=lockfile   # /usr/bin/lockfile
+cat=cat             # /bin/cat
+rm=rm               # /bin/rm
+sed=sed             # /bin/sed
+<p>
+#  create lock file to discourage SmartList running a job
+<p>
+$lockfile -10 -l3600 -r11 -s30 rc.lock
+<p>
+$sed -e "1,/(Only addresses below this line can be automatically removed)/{
+;w slabove.$$
+;d;
+}
+" dist | sort -fu -o slbelow.$$
+<p>
+$cat sl?????.$$ > dist
+$rm -f sl?????.$$
+<p>
+$rm -rf rc.lock
+</pre>
+
+</blockquote>
+<hr>
+<a name="Section_8.7">
+<h4>8.7: How can I keep people from sending HTML/attachments/other junk to the list?</h4>
+<blockquote>
+<p>
+Several good recipes for this have been posted to the SmartList mailing
+list.
+<ul>
+<li> Mike Nolan contributed  one, which rejects messages that are
+posted in html:
+<a href="contrib/reject_html.txt">
+contrib/reject_html.txt
+</a>
+<p>
+<li> Rob Lingelbach contributed one which rejects messages in
+html, messages with a Return-Receipt request, uuencoded messages,
+winmail.dat files, non-text encoded files, attached applications,
+inline attachments, and messages which have too much quoted
+text:
+<a href="contrib/reject_garbage.txt">
+contrib/reject_garbage.txt
+</a>
+<p>
+<li>Violet has taken Rob's scripts and modified them in possibly useful ways:
+<a href="contrib/reject_garbage2.txt">
+contrib/reject_garbage2.txt
+</a>
+<p>
+</ul>
+<p>
+This just in: AOL 6.0 <i>can</i> be made to send a message in non-html format.
+Select the entire message, right click on it, and select TEXT - NORMAL.
+(Thanks to Ted Fulmer for that tip.)
+
+</blockquote>
+<hr>
+<a name="Section_8.8">
+<h4>8.8: How do I make replies go to the list instead of to the sender?</h4>
+<blockquote>
+<p>
+The "Reply-To:" header element is designed to allow you to do this, and 
+the reply_to variable within your rc.custom file gives you the ability to control
+this header element in list processed email.
+<p>
+There are several approaches.  Arguably the simplest is,
+in the rc.custom file, uncomment the line:
+<pre>
+reply_to = $listaddr
+</pre>
+<p>
+and set it to something like this:
+<p>
+<pre>
+reply_to = "Reply-To: $listaddr"
+</pre>
+<p>
+Paul Thomas notes that:
+<blockquote>
+"The 'Reply-To: ' rule in rc.custom is overwritten if a post to the
+list already contains a 'Reply-To: ' with a different address. Putting
+something like: 
+</blockquote><pre>
+        :0 fhw
+        | formail -I "Reply-To: test@somedomain.com"
+</pre><blockquote>
+in rc.local.s20 might be better."
+</blockquote>
+
+</blockquote>
+<hr>
+<a name="Section_8.9">
+<h4>8.9: How can I make replies go to the original sender?</h4>
+<blockquote>
+<p>
+If you run "announcement" style lists, where you want to discourage
+list discussion by having replies go to the original author, then 
+in the rc.custom file, uncomment the line:
+<pre>
+reply_to = $listaddr
+</pre>
+<p>
+and set it to something like this:
+<p>
+<pre>
+reply_to = "Reply-To: `formail -xFrom:`"
+</pre>
+<p>
+Note that the <i>formail -xFrom:</i> command is enclosed in backticks (`),
+which cause procmail to run the formail command in a subshell and return that
+command's results.
+
+</blockquote>
+<hr>
+<a name="Section_8.10">
+<h4>8.10: Why doesn't putting "Reply-To: $listaddr" in my rc.custom file work for all subscribers?</h4>
+<blockquote>
+<p>
+Smartlist will not overwrite an existing Reply-to: address, so if the
+member's mail client already adds a Reply-to:, it will remain in the
+message that appears on the list.
+<p>
+You can change that behavior with a simple one-byte change of the rc.submit
+file.
+<p>
+Change the line that says:
+<p>
+<pre>
+        -a"Subject: Unidentified subject!" ${reply_to:+"-a$reply_to"} \
+</pre>
+to:
+<pre>
+        -a"Subject: Unidentified subject!" ${reply_to:+"-i$reply_to"} \
+</pre>
+<p>
+Note that you will need to <a href="#Section_2.15">delink</a> the rc.submit file first, because
+otherwise your change will affect all lists run from that directory.
+<p>
+(Thanks to Matt Kemner for this one.)
+
+</blockquote>
+<hr>
+<a name="Section_8.11">
+<h4>8.11: How can I include the number of subscribers in the footer I'm attaching to each list mail?</h4>
+<blockquote>
+<p>
+The idea is to keep the footer text in a file called <b>footer.template</b>.  In that file
+you embed <b>$COUNT</b> wherever you want the list population inserted.  Then you cause
+your subscription and unsubscription processing to count the list members, and interpolate
+<b>footer.template</b> to produce a <b>footer.txt</b> file.
+<p>
+Perhaps your <b>footer.template</b> file might look like this:
+<pre>
+---
+To unsubscribe, blah blah blah.
+This list has $COUNT subscribers.
+</pre>
+<p>
+For this to work, you need to uncomment <pre>RC_LOCAL_REQUEST_20  = rc.local.r20</pre>
+from either your <b>rc.init</b> or your <b>rc.custom</b>.  You also need to have <b>cc_unsubrequests</b> and
+<b>cc_requests</b> set to yes.  Then, add this recipe to the end of normal sub/unsub processing; rc.local.r20:
+<pre>
+# Count list members, and update footer.txt using footer.template.
+:0
+* ^X-Diagnostic: (Processed|Added to the subscriber list)
+{
+    COUNT=`grep -cv '^(' dist`
+    :0cWi
+    | sed 's/\$COUNT/'"$COUNT"/g footer.template &gt;footer.txt
+}
+</pre>
+<p>
+There's a catch, however.  If you are using HTML/MIME formatting in your messages
+then you need to also read
+<a href="#Section_8.13">Section 8.13: 
+Why are MIME and HTML emails a problem for SmartList?</a>
+
+</blockquote>
+<hr>
+<a name="Section_8.12">
+<h4>8.12: How to send an auto-reply back when someone posts?</h4>
+<blockquote>
+<p>
+Courtesy of Ravi Pina:
+<p>
+Placing this in
+rc.local.s20 and uncommenting the appropriate
+line in the rc.custom file will provide this
+functionality.
+<p>
+<pre>
+# recipe to send an autoreply
+ 
+REPLY_TEXT=/path/to/autoreply.txt
+REPLY_SUBJECT="Message Received"
+
+:0 whc
+| formail -rtzc -xTo: >tmp.from
+
+:0 ch :autoreply.lock
+| (formail -rtzc -I "Subject: $REPLY_SUBJECT" \
+-A"Precedence: junk" ; cat $REPLY_TEXT) | \
+$SENDMAIL -t `cat tmp.from`
+</pre>
+<p>
+Ravi couldn't stop thinking about this one, so he then sent this:
+<p>
+"I've made the auto-reply a bit more robust and
+bloated :)
+<p>
+Place the following in rc.local.s20 and uncomment
+the corresponding line in your unlinked rc.custom.
+REPLY_TEMP is a text file that gets mailed back
+to the original sender. It will be sent as
+MAIL_FROM.  If you want to put a user name in the
+header From: line, do so in HDR_FROM. The subject
+will be set to REPLY_SUBJECT.
+<p>
+If you want to use the original subject in your
+reply, place `$SUBJECT' where you want it to
+appear in the REPLY_TEMP file and set MUNGE_BODY
+appropriately."
+<p>
+<pre>
+#MUNGE_BODY=no
+REPLY_TEMP=/path/to/autoreply.txt
+MAIL_FROM="moo@cow.org"
+HDR_FROM="moo@cow.org (moo!)"
+REPLY_SUBJECT="Message Received"
+ORIG_SUB=`formail -zx Subject:`
+
+:0 whc
+| formail -rtzc -xTo: >tmp.from ; \
+cp $REPLY_TEMP tmp.autoreply
+
+:0 whc
+* MUNGE_BODY ?? y
+| sed 's/\$SUBJECT/'"$ORIG_SUB"/g $REPLY_TEMP > tmp.autoreply
+
+:0 ch :autoreply.lock
+| (formail -rtzc -I "Subject: $REPLY_SUBJECT" -I "From: $HDR_FROM" \ 
+-A"Precedence: junk" ; cat tmp.autoreply) | \
+$SENDMAIL -t -f $MAIL_FROM `cat tmp.from`
+</pre>
+
+</blockquote>
+<hr>
+<a name="Section_8.13">
+<h4>8.13: Why are MIME and HTML emails a problem for SmartList?</h4>
+<blockquote>
+<p>
+This FAQ entry originated in a discussion about problems with embedding X-Commands
+in the body of a MIME formatted message.
+(See <a href="#Section_2.10">Section 2.10</a>)
+The exact same type of trouble arises when
+you want to add a custom message heading or footer to the body of a message.  (Note that
+"body heading" is not the same as a message header entry!)
+(See <a href="#Section_3.2">Section 3.2</a>)
+<p>
+Note that HTML formatted email is sent as a MIME formatted message.
+<p>
+Hans-Albert Schneider, by way of Martin Mokrejs contributed this useful explanation
+of why <b>X-Commands from the message body won't work if the email is divided
+into MIME segments!</b>  This is because
+MIME segments create extra blank lines between the header and the body; something
+like this:
+<p>
+<b>Mail header (with To:, Subject:, Date:, etc.)</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><i>(empty line)</i></font><br>
+MIME separator<br>
+MIME header of first component<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><i>(empty line)</i></font><br>
+<b>body of first MIME component</b><br>
+MIME separator<br>
+MIME header of second component<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><i>(empty line)</i></font><br>
+<b>body of second MIME component</b><br>
+MIME separator<br>
+<p>
+So the body actually starts no sooner than after the <i>second</i> blank line...
+Now, the details:<p>
+<b>X-Commands:</b><br>
+The easy answer is to put the X-Command in the email header.  Barring that, you could
+possibly hack  SmartList to look for X-Commands anywhere in a message, but that
+would be somewhat dangerous.
+<p>
+<b>Body heading:</b><br>
+Text inserted by recipes immediately after the first blank
+line (i.e. at the start of the body if the message were a regular text email)
+won't show up because it's <b>before</b>
+the first MIME separator, and thus doesn't belong to any of the MIME message parts.
+<p>
+You'd need to properly determine which MIME sections to modify and which
+to leave alone (e.g. leave all attachments and binaries alone).  Then
+you'd need to figure out how to parse each segment to be modified, and 
+insert the text appropriately, e.g. as html before the closing html tag in
+the html section, and just as text in the text section.  Very messy.  
+Probably possible if you're good with perl and understand the MIME format,
+and if all of your submitters use proper MIME formatting email clients.
+God save you if someone decides to post the newsletter as a word doc.
+<p>
+<b>Body footer:</b><br>
+Similar to the previous case, but here the text is injected <b>after</b> the final MIME separator,
+and so again doesn't belong to any of the MIME message parts.
+<p>
+A proper MIME-aware text insertion recipe would have to know how to modify ALL
+of the text message segments <i>without</i>
+touching any message segments which contain non-message text data, e.g. attachments.
+
+</blockquote>
+
+<HR align=left noshade color=blue size=2 width="100%">
+<div style="font-size:9pt;text-align:center;font-family:verdana,tahoma,sans-serif,arial;">
+<a href="http://www.procmail.org/">Procmail Home</a> |
+<a href="Manual.html">SmartList Manual</a> |
+<a href="https://mailman.rwth-aachen.de/mailman/listinfo/smartlist">Mailing List</a>
+</div>
+</body>
+</html>
